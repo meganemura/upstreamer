@@ -1,3 +1,7 @@
+[![Gem Version](https://img.shields.io/gem/v/upstreamer.svg?style=flat)](http://badge.fury.io/rb/upstreamer)
+[![Dependency Status](https://img.shields.io/gemnasium/meganemura/upstreamer.svg?style=flat)](https://gemnasium.com/meganemura/upstreamer)
+[![Code Climate](https://img.shields.io/codeclimate/github/meganemura/upstreamer.svg?style=flat)](https://codeclimate.com/github/meganemura/upstreamer)
+
 # Upstreamer
 
 Add `upstream` remote-tracking branch to your forked repository by tracking GitHub.
