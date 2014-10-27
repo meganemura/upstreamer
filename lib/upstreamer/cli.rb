@@ -14,8 +14,8 @@ module Upstreamer
     end
 
     def run
-      forked_repository_directory = specified_directory || current_directory
-      repo = Rugged::Repository.new(forked_repository_directory)
+      directory = specified_directory || current_directory
+      repo = Rugged::Repository.new(directory)
 
       if repo.remotes['upstream']
         puts "Error: Remote 'upstream' already exists. (#{repo.remotes['upstream'].url})"
