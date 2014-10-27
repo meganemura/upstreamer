@@ -1,6 +1,6 @@
 # Upstreamer
 
-Add `upstream` remote-tracking branch to your forked repository by tracking GitHub upstream.
+Add `upstream` remote-tracking branch to your forked repository by tracking GitHub.
 
 ## Usage
 
@@ -10,9 +10,10 @@ $ cd /path/to/forked-repository
 $ git remote -v
 origin  https://github.com/your-username/forked-repository.git (fetch)
 origin  https://github.com/your-username/forked-repository.git (push)
+
 $ upstreamer
-find upstream...
 git remote add upstream https://github.com/upstream-username/forked-repository.git
+
 $ git remote -v
 origin  https://github.com/your-username/forked-repository.git (fetch)
 origin  https://github.com/your-username/forked-repository.git (push)
