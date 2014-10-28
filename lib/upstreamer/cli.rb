@@ -18,16 +18,20 @@ module Upstreamer
       repo = Rugged::Repository.new(directory)
 
       if repo.remotes['upstream']
-        puts "Error: Remote 'upstream' already exists. (#{repo.remotes['upstream'].url})"
+        log_error "Error: Remote 'upstream' already exists. (#{repo.remotes['upstream'].url})"
         return
       end
 
       remote = repo.remotes['origin']                               # https://github.com/meganemura/bundler.git
+      unless remote
+        log_error "Error: Could not find remote 'origin'. (#{directory})"
+        return
+      end
       username_repository = remote.url[/github.com\/(.*)\.git/, 1]  # meganemura/bundler
 
       repository = Octokit.repository(username_repository)
       unless repository.fork?
-        puts 'Error: this repository is not forked repository'
+        log_error "Error: This repository is not forked repository. (#{directory})"
         return
       end
       upstream_url = repository.parent.clone_url
@@ -42,6 +46,14 @@ module Upstreamer
 
     def current_directory
       Dir.pwd
+    end
+
+    def log_error(message)
+      STDERR.puts(message) unless quiet
+    end
+
+    def quiet
+      false
     end
   end
 end
