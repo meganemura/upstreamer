@@ -29,11 +29,12 @@ upstream  https://github.com/upstream-username/forked-repository.git (push)
 ### Batch configure
 
 ```shell
-$ ls -1 /path/to/your-repositories-directory
+$ cd /path/to/your-repositories-directory
+$ ls -1
 forked-repo1
 forked-repo2
 forked-repo3
-$ ls -1 /path/to/your-repositories-directory | xargs -n1 upstreamer
+$ ls -d $PWD/* | xargs -n1 upstreamer
 git remote add upstream https://github.com/upstream-username/forked-repo1.git
 git remote add upstream https://github.com/upstream-username/forked-repo2.git
 git remote add upstream https://github.com/upstream-username/forked-repo3.git
