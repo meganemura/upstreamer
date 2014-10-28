@@ -18,7 +18,7 @@ module Upstreamer
       repo = Rugged::Repository.new(directory)
 
       if repo.remotes['upstream']
-        puts "Error: Remote 'upstream' already exists. (#{repo.remotes['upstream'].url})"
+        STDERR.puts "Error: Remote 'upstream' already exists. (#{repo.remotes['upstream'].url})"
         return
       end
 
@@ -27,7 +27,7 @@ module Upstreamer
 
       repository = Octokit.repository(username_repository)
       unless repository.fork?
-        puts 'Error: this repository is not forked repository'
+        STDERR.puts 'Error: this repository is not forked repository'
         return
       end
       upstream_url = repository.parent.clone_url
