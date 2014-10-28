@@ -13,17 +13,17 @@ $ gem install upstreamer
 $ cd /path/to/forked-repository
 
 $ git remote -v
-origin  https://github.com/your-username/forked-repository.git (fetch)
-origin  https://github.com/your-username/forked-repository.git (push)
+origin    https://github.com/your-username/forked-repository.git (fetch)
+origin    https://github.com/your-username/forked-repository.git (push)
 
 $ upstreamer
 git remote add upstream https://github.com/upstream-username/forked-repository.git
 
 $ git remote -v
-origin  https://github.com/your-username/forked-repository.git (fetch)
-origin  https://github.com/your-username/forked-repository.git (push)
-upstream        https://github.com/upstream-username/forked-repository.git (fetch)
-upstream        https://github.com/upstream-username/forked-repository.git (push)
+origin    https://github.com/your-username/forked-repository.git (fetch)
+origin    https://github.com/your-username/forked-repository.git (push)
+upstream  https://github.com/upstream-username/forked-repository.git (fetch)
+upstream  https://github.com/upstream-username/forked-repository.git (push)
 ```
 
 ### Batch configure
