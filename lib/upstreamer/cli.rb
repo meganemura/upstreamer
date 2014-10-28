@@ -23,6 +23,10 @@ module Upstreamer
       end
 
       remote = repo.remotes['origin']                               # https://github.com/meganemura/bundler.git
+      unless remote
+        STDERR.puts "Error: Could not find remote 'origin'. (#{directory})"
+        return
+      end
       username_repository = remote.url[/github.com\/(.*)\.git/, 1]  # meganemura/bundler
 
       repository = Octokit.repository(username_repository)
